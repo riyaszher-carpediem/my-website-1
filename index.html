@@ -1,23 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assistant Jailor Rank List 2026 - Marks Survey</title>
+  <style>
+    :root {
+      --primary: #1a365d;
+      --secondary: #2b6cb0;
+      --accent: #d69e2e;
+      --card: rgba(255, 255, 255, 0.94);
+      --text: #1a202c;
+      --muted: #4a5568;
+      --border: #cbd5e0;
+      --danger: #c53030;
+      --success: #2f855a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      /* Background image with a dark gradient overlay for better contrast */
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
+                  url('afd16e49-da92-4b9c-af0e-e6874756d9e9.png') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 40px;
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(26, 54, 93, 0.9);
+      backdrop-filter: blur(6px);
+      color: #ffffff;
+      text-align: center;
+      padding: 28px 16px;
+      border-bottom: 4px solid var(--accent);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .instructions {
+      background-color: rgba(255, 251, 235, 0.95);
+      border-left: 5px solid var(--accent);
+    }
+
+    .instructions h2 {
+      font-size: 1.15rem;
+      color: #744210;
+      margin-bottom: 10px;
+    }
+
+    .instructions ul {
+      padding-left: 20px;
+      color: #5f370e;
+      font-size: 0.93rem;
+    }
+
+    .instructions li {
+      margin-bottom: 6px;
+    }
+
+    h2.section-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #edf2f7;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    label span.req {
+      color: var(--danger);
+      margin-left: 3px;
+    }
+
+    input, select {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      background-color: #ffffff;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+    }
+
+    .checkbox-group {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .checkbox-group input {
+      margin-top: 4px;
+      width: 16px;
+      height: 16px;
+    }
+
+    .checkbox-group label {
+      font-weight: 400;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .btn {
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: var(--primary);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--secondary);
+      border: 1px solid var(--secondary);
+      padding: 7px 14px;
+      font-size: 0.85rem;
+      width: auto;
+      margin-top: 0;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--secondary);
+      color: #fff;
+    }
+
+    .table-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      background: #ffffff;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background-color: #edf2f7;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    tr:hover {
+      background-color: #f7fafc;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background-color: #ebf8ff;
+      color: var(--secondary);
+    }
+
+    #statusMsg {
+      display: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .msg-success {
+      background-color: #f0fff4;
+      color: var(--success);
+      border: 1px solid #9ae6b4;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #ffffff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This site was built and hosted for free using GitHub Pages!</p>
+
+  <header>
+    <h1>Assistant Jailor Rank List 2026</h1>
+    <p>Candidate Marks Survey &amp; Probable Rank Estimation</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Instructions Section -->
+    <div class="card instructions">
+      <h2>⚠️ Important Instructions Before Submitting</h2>
+      <ul>
+        <li><strong>Genuine Candidates Only:</strong> Only candidates who actually appeared for the Assistant Jailor 2026 examination should participate in this survey.</li>
+        <li><strong>Provisional Answer Key Marks:</strong> Enter your real, accurate net marks calculated strictly based on the official <strong>Provisional Answer Key</strong> (after deducting negative marks).</li>
+        <li><strong>No Duplicate Entries:</strong> Submit your details only once. Duplicate or fake entries will be removed during verification.</li>
+        <li><strong>Privacy Note:</strong> Mobile numbers are collected strictly for verification purposes and will be masked in the public rank table.</li>
+      </ul>
+    </div>
+
+    <!-- Survey Form Section -->
+    <div class="card">
+      <h2 class="section-title">Candidate Survey Form</h2>
+      <form id="surveyForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="candidateName">Name of Trainee / Candidate <span class="req">*</span></label>
+            <input type="text" id="candidateName" placeholder="Enter full name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="regNumber">Register Number <span class="req">*</span></label>
+            <input type="text" id="regNumber" placeholder="e.g., 1012345" required />
+          </div>
+
+          <div class="form-group">
+            <label for="mobileNumber">Mobile Number <span class="req">*</span></label>
+            <input type="tel" id="mobileNumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10" required />
+          </div>
+
+          <div class="form-group">
+            <label for="category">Reservation Category <span class="req">*</span></label>
+            <select id="category" required>
+              <option value="">-- Select Category --</option>
+              <option value="General / OC">General / OC</option>
+              <option value="Ezhava / Thiyya / Billava">Ezhava / Thiyya / Billava</option>
+              <option value="Muslim">Muslim</option>
+              <option value="LC / AI">LC / AI</option>
+              <option value="OBC">OBC</option>
+              <option value="Viswakarma">Viswakarma</option>
+              <option value="SIUC Nadar / Hindu Nadar">SIUC Nadar / Hindu Nadar</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+              <option value="EWS">EWS</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="provisionalMarks">Net Marks (As per Provisional Key) <span class="req">*</span></label>
+            <input type="number" id="provisionalMarks" step="0.01" min="0" max="100" placeholder="e.g., 68.33" required />
+          </div>
+
+          <div class="form-group">
+            <label for="weightageMarks">Bonus / Weightage Marks (NCC/Sports, if any)</label>
+            <input type="number" id="weightageMarks" step="0.01" min="0" max="20" value="0" placeholder="0" />
+          </div>
+
+          <div class="form-group full-width checkbox-group">
+            <input type="checkbox" id="declaration" required />
+            <label for="declaration">
+              I hereby declare that I am a genuine candidate for Assistant Jailor 2026 and the marks entered above are calculated accurately from the provisional answer key. <span class="req">*</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Submit My Marks</button>
+        <div id="statusMsg" class="msg-success"></div>
+      </form>
+    </div>
+
+    <!-- Live Rank List Preview Section -->
+    <div class="card">
+      <div class="table-header">
+        <h2 class="section-title" style="margin-bottom: 0; border: none;">Provisional Survey Rank List</h2>
+        <button type="button" class="btn btn-outline" onclick="exportCSV()">Download CSV (Excel)</button>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Reg. No</th>
+              <th>Category</th>
+              <th>Mobile</th>
+              <th>Net Marks</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="rankTableBody">
+            <tr>
+              <td colspan="7" style="text-align: center; color: #718096;">No entries submitted yet. Be the first to submit!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      Disclaimer: This is an unofficial candidate-driven survey for probable rank estimation only.
+    </footer>
+
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'assistant_jailor_2026_survey';
+
+    function getEntries() {
+      const data = localStorage.getItem(STORAGE_KEY);
+      return data ? JSON.parse(data) : [];
+    }
+
+    function saveEntries(entries) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+    }
+
+    function maskMobile(num) {
+      return num.slice(0, 2) + 'XXXXXX' + num.slice(-2);
+    }
+
+    function renderTable() {
+      const entries = getEntries();
+      const tbody = document.getElementById('rankTableBody');
+
+      if (entries.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #718096;">No entries submitted yet. Be the first to submit!</td></tr>';
+        return;
+      }
+
+      entries.sort((a, b) => b.total - a.total);
+
+      tbody.innerHTML = entries.map((item, index) => `
+        <tr>
+          <td><strong>#${index + 1}</strong></td>
+          <td>${escapeHTML(item.name)}</td>
+          <td>${escapeHTML(item.regNo)}</td>
+          <td><span class="badge">${escapeHTML(item.category)}</span></td>
+          <td>${maskMobile(item.mobile)}</td>
+          <td>${item.marks.toFixed(2)}</td>
+          <td><strong>${item.total.toFixed(2)}</strong></td>
+        </tr>
+      `).join('');
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag]));
+    }
+
+    document.getElementById('surveyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('candidateName').value.trim();
+      const regNo = document.getElementById('regNumber').value.trim();
+      const mobile = document.getElementById('mobileNumber').value.trim();
+      const category = document.getElementById('category').value;
+      const marks = parseFloat(document.getElementById('provisionalMarks').value) || 0;
+      const weightage = parseFloat(document.getElementById('weightageMarks').value) || 0;
+      const total = marks + weightage;
+
+      const entries = getEntries();
+
+      const existingIndex = entries.findIndex(item => item.regNo.toLowerCase() === regNo.toLowerCase());
+      if (existingIndex !== -1) {
+        entries[existingIndex] = { name, regNo, mobile, category, marks, weightage, total };
+      } else {
+        entries.push({ name, regNo, mobile, category, marks, weightage, total });
+      }
+
+      saveEntries(entries);
+      renderTable();
+
+      const statusMsg = document.getElementById('statusMsg');
+      statusMsg.textContent = 'Thank you! Your marks have been recorded in the provisional survey list.';
+      statusMsg.style.display = 'block';
+
+      this.reset();
+      setTimeout(() => { statusMsg.style.display = 'none'; }, 4000);
+    });
+
+    function exportCSV() {
+      const entries = getEntries();
+      if (entries.length === 0) {
+        alert('No data available to download.');
+        return;
+      }
+      entries.sort((a, b) => b.total - a.total);
+      let csv = 'Rank,Name,Register Number,Mobile Number,Category,Net Marks,Weightage,Total Marks\n';
+      entries.forEach((e, i) => {
+        csv += `${i + 1},"${e.name}","${e.regNo}","${e.mobile}","${e.category}",${e.marks},${e.weightage},${e.total}\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Assistant_Jailor_Rank_List_2026.csv';
+      link.click();
+    }
+
+    renderTable();
+  </script>
+
 </body>
 </html>
